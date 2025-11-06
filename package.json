@@ -1,0 +1,10 @@
+{
+  "name": "pdf-signer-web-deploy",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "serve dist -s -l 3000"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}

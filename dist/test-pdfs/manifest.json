@@ -1,0 +1,138 @@
+{
+  "version": "1.1",
+  "description": "Test PDF repository for automated pre-flight testing. Now includes real-world Chrome and Google Docs PDFs!",
+  "lastUpdated": "2025-11-02T22:15:00Z",
+  "testCases": [
+    {
+      "id": "wire-instructions",
+      "file": "working/wire-instructions.pdf",
+      "expectedStatus": "supported",
+      "properties": {
+        "version": "1.4",
+        "pages": 3,
+        "objects": 8,
+        "pageSize": "Letter",
+        "encrypted": false,
+        "linearized": false,
+        "hasSignatures": false
+      },
+      "expectedOutcome": "success",
+      "notes": "Original working test PDF from POC. Simple structure, validates perfectly in Adobe Reader.",
+      "tags": ["poc", "simple", "letter"]
+    },
+    {
+      "id": "test-document",
+      "file": "working/test-document.pdf",
+      "expectedStatus": "supported",
+      "properties": {
+        "version": "1.4",
+        "pages": 1,
+        "objects": 4,
+        "pageSize": "Letter",
+        "encrypted": false,
+        "linearized": false,
+        "hasSignatures": false
+      },
+      "expectedOutcome": "success",
+      "notes": "Created with pdf-lib. Has visible text and graphics. Validates in Adobe Reader.",
+      "tags": ["pdf-lib", "simple", "letter", "content"]
+    },
+    {
+      "id": "simple-test",
+      "file": "working/simple-test.pdf",
+      "expectedStatus": "supported",
+      "properties": {
+        "version": "1.4",
+        "pages": 1,
+        "objects": 4,
+        "pageSize": "Letter",
+        "encrypted": false,
+        "linearized": false,
+        "hasSignatures": false
+      },
+      "expectedOutcome": "success",
+      "notes": "Minimal test PDF. Fixed version that renders correctly.",
+      "tags": ["minimal", "simple", "letter"]
+    },
+    {
+      "id": "chrome-google-docs-simple",
+      "file": "chrome-google-docs/simple-test-google-docs.pdf",
+      "expectedStatus": "supported",
+      "properties": {
+        "version": "1.4",
+        "pages": 1,
+        "objects": 47,
+        "pageSize": "Letter",
+        "encrypted": false,
+        "linearized": false,
+        "hasSignatures": false
+      },
+      "expectedOutcome": "success",
+      "notes": "Simple text document from Google Docs. Real-world test case.",
+      "tags": ["google-docs", "simple", "letter", "real-world"]
+    },
+    {
+      "id": "chrome-print-complex-images",
+      "file": "chrome-google-docs/complex-with-images-chrome-print.pdf",
+      "expectedStatus": "supported",
+      "properties": {
+        "version": "1.4",
+        "pages": 1,
+        "objects": 552,
+        "pageSize": "Letter",
+        "encrypted": false,
+        "linearized": false,
+        "hasSignatures": false
+      },
+      "expectedOutcome": "success",
+      "notes": "Complex page with images from Chrome Print. Tests large object count (552 objects).",
+      "tags": ["chrome", "complex", "images", "letter", "real-world"]
+    },
+    {
+      "id": "google-docs-multipage-images",
+      "file": "chrome-google-docs/text-with-images-google-docs.pdf",
+      "expectedStatus": "supported",
+      "properties": {
+        "version": "1.4",
+        "pages": 2,
+        "objects": 58,
+        "pageSize": "Letter",
+        "encrypted": false,
+        "linearized": false,
+        "hasSignatures": false
+      },
+      "expectedOutcome": "success",
+      "notes": "Multi-page document with images from Google Docs. Tests multi-page signing.",
+      "tags": ["google-docs", "multi-page", "images", "letter", "real-world"]
+    },
+    {
+      "id": "google-docs-presentation-large",
+      "file": "chrome-google-docs/complex-presentation-google-docs.pdf",
+      "expectedStatus": "supported",
+      "properties": {
+        "version": "1.4",
+        "pages": 35,
+        "objects": 229,
+        "pageSize": "Custom",
+        "encrypted": false,
+        "linearized": false,
+        "hasSignatures": false
+      },
+      "expectedOutcome": "success",
+      "notes": "Large presentation (35 pages, 660KB) from Google Docs. Tests performance with many pages and custom page size (720x405).",
+      "tags": ["google-docs", "large", "presentation", "custom-size", "real-world", "performance"]
+    }
+  ],
+  "statistics": {
+    "total": 7,
+    "working": 7,
+    "edgeCases": 0,
+    "future": 0
+  },
+  "testRunConfig": {
+    "timeout": 30000,
+    "validateSignature": true,
+    "checkAdobeCompatibility": true,
+    "allowExperimental": false
+  }
+}
